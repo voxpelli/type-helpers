@@ -8,7 +8,7 @@ interface Declaration {
 
 type ValidDeclarations<
   Declarations extends object,
-  DeclarationExtras extends object = {}
+  DeclarationExtras extends object
 > = {
   [key in keyof Declarations as (
     Declarations[key] extends DeclarationExtras & Declaration
@@ -25,7 +25,7 @@ export type AnyDeclaration<
 
 export type AnyDeclarationType<
   Declarations extends object,
-  DeclarationExtras extends object,
+  DeclarationExtras extends object = {},
   Valid extends ValidDeclarations<Declarations, DeclarationExtras> = ValidDeclarations<Declarations, DeclarationExtras>
 > =
   (keyof Valid) extends string ? Valid[keyof Valid]['type'] : never;
