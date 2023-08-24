@@ -64,7 +64,7 @@ export type AnyFooDeclaration = AnyDeclaration<FooDeclarations, FooDeclarationEx
 export type AnyFooDeclarationType = AnyDeclarationType<FooDeclarations, FooDeclarationExtras>;
 
 export interface FooDeclaration<TypeName extends AnyFooDeclarationType, Value>
-  extends ValidDeclaration<FooDeclarations, FooDeclarationExtras, TypeName>
+  extends ValidDeclaration<TypeName, FooDeclarations, FooDeclarationExtras>
 {
   value: Value
 }
