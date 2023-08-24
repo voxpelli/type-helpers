@@ -107,6 +107,11 @@ function timeToFoo (foo) {
 * `PartialKeys<Foo, 'abc'>` – makes the key `abc` of `Foo` optional
 * `Equal<A, B>` – if `A extends B`, then resolves to `A`, else resolved to `never`
 
+
+## Used by
+
+* [`umzeption`](https://github.com/voxpelli/umzeption) – my original project for the initial types of this module
+
 ## Similar modules
 
 * [`type-fest`](https://github.com/sindresorhus/type-fest) – a large colelction of type helpers
