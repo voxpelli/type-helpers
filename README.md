@@ -28,9 +28,9 @@ A mechanism for third-party extendible [discriminated unions](https://www.typesc
 
 #### Declaration types helpers
 
-* `AnyDeclaration<Declarations, DeclarationsExtras>` – returns a union of all valid declarations in `Declarations`
-* `AnyDeclarationType<Declarations, DeclarationsExtras>` – returns a union of the type names from all valid declarations in `Declarations`
-* `ValidDeclaration<Declarations, DeclarationsExtras, TypeName>` – the base type of a valid declaration for `Declarations` / `DeclarationsExtras` that also validates that `TypeName` exists as a valid declaration in `Declarations`
+* `AnyDeclaration<Declarations, [DeclarationsExtras={}]>` – returns a union of all valid declarations in `Declarations`
+* `AnyDeclarationType<Declarations, [DeclarationsExtras={}]>` – returns a union of the type names from all valid declarations in `Declarations`
+* `ValidDeclaration<TypeName, Declarations, [DeclarationsExtras={}]>` – the base type of a valid declaration for `Declarations` / `DeclarationsExtras` that also validates that `TypeName` exists as a valid declaration in `Declarations`
 
 #### Valid declarations
 
