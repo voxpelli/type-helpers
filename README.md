@@ -104,8 +104,9 @@ function timeToFoo (foo) {
 
 ### Util types
 
-* `PartialKeys<Foo, 'abc'>` – makes the key `abc` of `Foo` optional
 * `Equal<A, B>` – if `A extends B`, then resolves to `A`, else resolved to `never`
+* `MaybePromised<T>` – resolves to `T | Promise<T>`
+* `PartialKeys<Foo, 'abc'>` – makes the key `abc` of `Foo` optional
 
 
 ## Used by
