@@ -33,7 +33,7 @@
     "@voxpelli/tsconfig": "^8.0.0",
     "husky": "^8.0.3",
     "installed-check": "^8.0.0",
-    "knip": "^2.19.9",
+    "knip": "^3.7.0",
     "npm-run-all2": "^6.1.1",
     "type-coverage": "^2.26.0",
     "typescript": "~5.1.6"
