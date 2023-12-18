@@ -4,3 +4,11 @@ export type NonGenericString<T, ErrorMessage extends string = never> =
     // With a simple "never" here instead TS gives a sometimes hard to decipher errors
     ? ErrorMessage
     : T;
+
+export type NonGenericStringArray<T, ErrorMessage extends string = never> =
+  T extends Array<infer U>
+    ? (string extends U ? ErrorMessage : T)
+    :
+    T extends ReadonlyArray<infer U>
+      ? (string extends U ? ErrorMessage : T)
+      : T;
