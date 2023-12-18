@@ -11,7 +11,7 @@
   "author": "Pelle Wessman <pelle@kodfabrik.se> (http://kodfabrik.se/)",
   "license": "MIT",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "types": "./index.d.ts",
   "files": [
@@ -29,11 +29,11 @@
     "test": "run-s check"
   },
   "devDependencies": {
-    "@types/node": "^16.18.68",
+    "@types/node": "^18.19.3",
     "@voxpelli/tsconfig": "^10.0.0",
     "husky": "^8.0.3",
-    "installed-check": "^8.0.0",
-    "knip": "^2.19.9",
+    "installed-check": "^8.0.1",
+    "knip": "^3.8.2",
     "npm-run-all2": "^6.1.1",
     "type-coverage": "^2.27.0",
     "typescript": "~5.3.2"
