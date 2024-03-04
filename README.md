@@ -109,9 +109,11 @@ function timeToFoo (foo) {
 
 ## Object types
 
-* `ObjectEntries<T>` – a typed equivalent of what `Object.entries()` returns
+* `ObjectEntry<T>` – a typed equivalent to all invidiual items `Object.entries()` returns
+* `ObjectEntries<T>` – an array of `ObjectEntry<T>`, mmore similar to what `Object.entries()` returns
 * `ObjectFromEntries<T>` – a typed equivalent of what `Object.fromEntries()` returns
 * `PartialKeys<Foo, 'abc'>` – makes the key `abc` of `Foo` optional
+* `UnknownObjectEntry` – the least specific entry for `ObjectFromEntries<T>` and what `T` needs to be a subset of there
 
 ## String types
 
