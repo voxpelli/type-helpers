@@ -20,17 +20,20 @@ My personal type helpers
 import type { PartialKeys } from '@voxpelli/type-helpers';
 ```
 
-## Available types
-
-### Declaration types
+## Declaration types
 
 A mechanism for third-party extendible [discriminated unions](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#discriminated-unions).
-
-#### Declaration types helpers
 
 * `AnyDeclaration<Declarations, [DeclarationsExtras={}]>` – returns a union of all valid declarations in `Declarations`
 * `AnyDeclarationType<Declarations, [DeclarationsExtras={}]>` – returns a union of the type names from all valid declarations in `Declarations`
 * `ValidDeclaration<TypeName, Declarations, [DeclarationsExtras={}]>` – the base type of a valid declaration for `Declarations` / `DeclarationsExtras` that also validates that `TypeName` exists as a valid declaration in `Declarations`
+
+<details>
+<summary>
+
+### Details on how to use declarations
+
+</summary>
 
 #### Valid declarations
 
@@ -102,12 +105,23 @@ function timeToFoo (foo) {
 }
 ```
 
-### Util types
+</details>
+
+## Object types
+
+* `ObjectEntries<T>` – a typed equivalent of what `Object.entries()` returns
+* `ObjectFromEntries<T>` – a typed equivalent of what `Object.fromEntries()` returns
+* `PartialKeys<Foo, 'abc'>` – makes the key `abc` of `Foo` optional
+
+## String types
+
+* `NonGenericString<T, [ErrorMessage]>` – ensures that `T` is not a generic `string` (and as such likely a string literal)
+* `NonGenericStringArray<T, [ErrorMessage]>` – similar to `NonGenericString` but with `T` being an `Array` / `ReadonlyArray`
+
+## Util types
 
 * `Equal<A, B>` – if `A extends B`, then resolves to `A`, else resolved to `never`
 * `MaybePromised<T>` – resolves to `T | Promise<T>`
-* `PartialKeys<Foo, 'abc'>` – makes the key `abc` of `Foo` optional
-
 
 ## Used by
 
