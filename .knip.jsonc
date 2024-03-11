@@ -1,9 +1,4 @@
 {
-  "$schema": "https://unpkg.com/knip@2/schema.json",
-  "entry": [
-    "index.js",
-    "index.d.ts"
-  ],
-  "ignoreBinaries": ["find"],
-  "ignoreDependencies": ["@types/mocha"]
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": ["index.d.ts"]
 }
