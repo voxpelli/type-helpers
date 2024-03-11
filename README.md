@@ -128,6 +128,7 @@ function timeToFoo (foo) {
 
 ## Used by
 
+* [`@voxpelli/typed-utils`](https://github.com/voxpelli/typed-utils) – my personal (type-enabled) utils / helpers
 * [`umzeption`](https://github.com/voxpelli/umzeption) – my original project for the initial types of this module
 
 ## Similar modules
