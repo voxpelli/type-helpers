@@ -123,6 +123,7 @@ function timeToFoo (foo) {
 ## Util types
 
 * `Equal<A, B>` – if `A extends B`, then resolves to `A`, else resolved to `never`
+* `LiteralTypeOf<T>` – resolves to a string literal that matches the [`typeof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator
 * `MaybePromised<T>` – resolves to `T | Promise<T>`
 
 ## Used by
