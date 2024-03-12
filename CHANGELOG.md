@@ -5,4 +5,4 @@
 
 ### Features
 
-* add `LiteralTypeOf&lt;T&gt;` ([97e09bc](https://github.com/voxpelli/type-helpers/commit/97e09bc0025dd1768f63c6b2c61e426325237135))
+* add `LiteralTypeOf<T>` ([97e09bc](https://github.com/voxpelli/type-helpers/commit/97e09bc0025dd1768f63c6b2c61e426325237135))
