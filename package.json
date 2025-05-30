@@ -20,7 +20,7 @@
     "lib/*.d.ts"
   ],
   "scripts": {
-    "check:installed-check": "installed-check -i knip -i installed-check",
+    "check:installed-check": "installed-check -i knip -i installed-check -i npm-run-all2",
     "check:knip": "knip",
     "check:tsc": "tsc",
     "check:type-coverage": "type-coverage --detail --strict --at-least 99 --ignore-files 'test/*'",
@@ -31,12 +31,12 @@
   "devDependencies": {
     "@types/node": "^18.19.22",
     "@voxpelli/tsconfig": "^11.0.0",
-    "husky": "^9.0.11",
-    "installed-check": "^8.0.1",
-    "knip": "^5.0.3",
-    "npm-run-all2": "^6.1.2",
+    "husky": "^9.1.7",
+    "installed-check": "^9.3.0",
+    "knip": "^5.59.1",
+    "npm-run-all2": "^7.0.2",
     "type-coverage": "^2.27.1",
     "typescript": "~5.4.2",
-    "validate-conventional-commit": "^1.0.3"
+    "validate-conventional-commit": "^1.0.4"
   }
 }
