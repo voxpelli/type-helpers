@@ -15,7 +15,7 @@ type ValidDeclarations<
       ? Equal<key, Declarations[key]['type']>
       : never
   )]: string extends key ? never : Declarations[key]
-}
+};
 
 export type AnyDeclaration<
   Declarations extends object,
@@ -33,7 +33,7 @@ export type AnyDeclarationType<
 export interface ValidDeclaration<
   Type extends AnyDeclarationType<Declarations, DeclarationExtras>,
   Declarations extends object,
-  DeclarationExtras extends object = {},
+  DeclarationExtras extends object = {}
 > extends Declaration {
   // Validates that its a string literal
   type: string extends Type ? never : (Type extends string ? Type : never);

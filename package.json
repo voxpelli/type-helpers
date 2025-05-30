@@ -13,6 +13,7 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "type": "module",
   "types": "./index.d.ts",
   "files": [
     "/index.d.ts",
@@ -20,7 +21,7 @@
     "lib/*.d.ts"
   ],
   "scripts": {
-    "check:installed-check": "installed-check -i knip -i installed-check -i npm-run-all2",
+    "check:installed-check": "installed-check -i knip -i installed-check -i npm-run-all2 -i @voxpelli/eslint-config -i eslint",
     "check:knip": "knip",
     "check:tsc": "tsc",
     "check:type-coverage": "type-coverage --detail --strict --at-least 99 --ignore-files 'test/*'",
@@ -30,7 +31,9 @@
   },
   "devDependencies": {
     "@types/node": "^18.19.22",
+    "@voxpelli/eslint-config": "^23.0.0",
     "@voxpelli/tsconfig": "^11.0.0",
+    "eslint": "^9.27.0",
     "husky": "^9.1.7",
     "installed-check": "^9.3.0",
     "knip": "^5.59.1",
