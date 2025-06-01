@@ -30,7 +30,7 @@
     "test": "run-s check"
   },
   "devDependencies": {
-    "@types/node": "^18.19.108",
+    "@types/node": "^18.19.110",
     "@voxpelli/eslint-config": "^23.0.0",
     "@voxpelli/tsconfig": "^15.1.2",
     "eslint": "^9.27.0",
