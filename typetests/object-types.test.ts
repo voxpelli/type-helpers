@@ -13,6 +13,11 @@ describe('ObjectEntry', () => {
   it('should extract union of all key-value entry tuples', () => {
     expect<ObjectEntry<{ a: string; b: number }>>().type.toBe<['a', string] | ['b', number]>();
   });
+
+  it('should raise error for non-object types', () => {
+    expect<ObjectEntry<string>>().type.toRaiseError();
+    expect<ObjectEntry<number>>().type.toRaiseError();
+  });
 });
 
 describe('ObjectEntries', () => {
@@ -44,6 +49,11 @@ describe('PartialKeys', () => {
     type TestObject = { a: string; b: number; c: boolean };
     type Result = PartialKeys<TestObject, 'a' | 'b'>;
     expect<Result>().type.toBeAssignableTo<{ a?: string; b?: number; c: boolean }>();
+  });
+
+  it('should raise error when key does not exist in object', () => {
+    type TestObject = { a: string; b: number };
+    expect<PartialKeys<TestObject, 'nonexistent'>>().type.toRaiseError();
   });
 });
 
