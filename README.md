@@ -134,7 +134,7 @@ function timeToFoo (foo) {
 * `NonGenericString<T, [ErrorMessage]>` – ensures that `T` is not a generic `string` (and as such likely a string literal)
 * `NonGenericStringArray<T, [ErrorMessage]>` – similar to `NonGenericString` but with `T` being an `Array` / `ReadonlyArray`
 
-## Util types
+## Utility types
 
 * `Equal<A, B>` – if `A extends B`, then resolves to `A`, else resolved to `never`
 * `MaybePromised<T>` – resolves to `T | Promise<T>`
