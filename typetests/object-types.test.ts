@@ -6,6 +6,7 @@ import type {
   ObjectFromEntries,
   PartialKeys,
   UnknownObjectEntry,
+  IsEmptyObject,
 } from '../index.js';
 
 describe('ObjectEntry', () => {
@@ -54,5 +55,22 @@ describe('UnknownObjectEntry', () => {
     expect<[42, 123]>().type.toBeAssignableTo<UnknownObjectEntry>();
     expect<[symbol, undefined]>().type.toBeAssignableTo<UnknownObjectEntry>();
     expect<['a', undefined]>().type.toBeAssignableTo<UnknownObjectEntry>();
+  });
+});
+
+describe('IsEmptyObject', () => {
+  it('should return true for empty object', () => {
+    expect<IsEmptyObject<{}>>().type.toBe<true>();
+  });
+
+  it('should return false for object with properties', () => {
+    expect<IsEmptyObject<{ a: string }>>().type.toBe<false>();
+    expect<IsEmptyObject<{ a: string; b: number }>>().type.toBe<false>();
+  });
+
+  it('should return false for non-object types', () => {
+    expect<IsEmptyObject<string>>().type.toBe<false>();
+    expect<IsEmptyObject<number>>().type.toBe<false>();
+    expect<IsEmptyObject<undefined>>().type.toBe<false>();
   });
 });
