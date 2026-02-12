@@ -4,24 +4,14 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-    inputs:
-      releaseAs:
-        description: 'Release as version'
-        required: true
-        type: string
 
 permissions:
-  contents: write
+  contents: read
   id-token: write
-  packages: write
-  pull-requests: write
 
 jobs:
   release-please:
-    uses: voxpelli/ghatemplates/.github/workflows/release-please.yml@main
+    uses: voxpelli/ghatemplates/.github/workflows/release-please-oidc.yml@main
     secrets: inherit
     with:
-      releaseAs: ${{ inputs.releaseAs }}
-      packageName: "@voxpelli/type-helpers"
-      bootstrapSha: 2bc3d1651009268e83cc629c7907e2e157fac481
+      app-id: '1082006'
