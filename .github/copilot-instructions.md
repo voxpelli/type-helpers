@@ -8,13 +8,6 @@ This is a **type-only TypeScript library** - containing only `.d.ts` files with 
 - Used by: [`@voxpelli/typed-utils`](https://github.com/voxpelli/typed-utils), [`umzeption`](https://github.com/voxpelli/umzeption)
 - Alternative: [`type-fest`](https://github.com/sindresorhus/type-fest)
 
-**Project Structure:**
-- `index.d.ts` - re-exports all types from lib/
-- `lib/declaration-types.d.ts` - Extendible discriminated unions
-- `lib/object-types.d.ts` - Object manipulation types
-- `lib/string-types.d.ts` - String validation types
-- `lib/util-types.d.ts` - General utility types
-
 ---
 
 ## Critical Rules
@@ -34,7 +27,7 @@ This is a **type-only TypeScript library** - containing only `.d.ts` files with 
 - Leverage conditional types, mapped types, template literals
 - Example:
   ```typescript
-  export type PartialKeys<T, Keys extends keyof T> = 
+  export type PartialKeys<T, Keys extends keyof T> =
     Omit<T, Keys> & Partial<Pick<T, Keys>>;
   ```
 
@@ -46,27 +39,23 @@ This is a **type-only TypeScript library** - containing only `.d.ts` files with 
 
 **Type Testing with tstyche:**
 - Type-level tests in `typetests/*.test.ts` using [tstyche](https://tstyche.org/)
-- Run: `npm run check:type-test` or `npm run test:tstyche`
-- Tests validate type behavior (e.g., `.toBe()`, `.toBeAssignableTo()`, `.toRaiseError()`)
+- Run: `npm run check:type-test` (runs on current TypeScript version) or `npm run test:tstyche` (runs on all supported TypeScript version)
+- Tests validate type behavior (e.g., `.toBe()`, `.toBeAssignableTo()`, `.toRaiseError()` – use DeepWiki `ask_question` / `read_wiki_contents` / `read_wiki_structure` tools to get current documentation `for tstyche/tstyche`)
 - **Note:** VSCode/editors may show errors on `.toRaiseError()` calls - this is expected and okay! These are intentional type errors being tested.
 
 **Other Checks:**
 ```bash
-npm test                      # All checks + type tests
 npm run check:tsc             # TypeScript validation
 npm run check:type-coverage   # Coverage >99%
 npm run check:knip            # Unused exports
 npm run check:lint            # ESLint
+npm run check:type-test       # TSTyche on installed TypeScript version
+npm run check                 # Runs all check:* in parallel
+npm run test:tstyche`         # TSTyche on all supported TypeScript versions
+npm test                      # check + test:tstyche
 ```
 
 **No runtime tests** - this library has no runtime code, only compile-time validation.
-
-## Type Categories
-
-- **Declaration Types** - Extendible discriminated unions via module augmentation
-- **Object Types** - Type-safe equivalents of Object.entries/fromEntries, PartialKeys
-- **String Types** - String literal validation (NonGenericString)
-- **Util Types** - Equal, LiteralTypeOf, MaybePromised, Simplify
 
 ## Git
 
