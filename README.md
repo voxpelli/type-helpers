@@ -14,6 +14,12 @@ My personal type helpers
 /** @typedef {import('@voxpelli/type-helpers').PartialKeys} PartialKeys */
 ```
 
+Or, in modern TypeScript versions:
+
+```typescript
+/** @import { PartialKeys } from '@voxpelli/type-helpers' */
+```
+
 ### TypeScript
 
 ```typescript
