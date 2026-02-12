@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.2](https://github.com/voxpelli/type-helpers/compare/v4.0.1...v4.0.2) (2026-02-12)
+
+
+### 📚 Documentation
+
+* improve readme ([a71dfcd](https://github.com/voxpelli/type-helpers/commit/a71dfcd395426fe2fb36adfeeb89484f8f1e7ef0))
+* spell out "Utility" in full ([bbc7434](https://github.com/voxpelli/type-helpers/commit/bbc74348472540513ed0dedddc723f82049dba9e))
+
 ## [4.0.1](https://github.com/voxpelli/type-helpers/compare/v4.0.0...v4.0.1) (2026-02-12)
 
 
