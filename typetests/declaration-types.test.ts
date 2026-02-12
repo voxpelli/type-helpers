@@ -51,6 +51,14 @@ describe('ValidDeclaration', () => {
   it('should validate input type property is narrowed to literal', () => {
     expect<ValidDeclaration<'Input', TestDeclarations>['type']>().type.toBe<'Input'>();
   });
+
+  it('should raise error when type name does not exist in declarations', () => {
+    expect<ValidDeclaration<'NonExistent', TestDeclarations>>().type.toRaiseError();
+  });
+
+  it('should raise error when using generic string instead of literal', () => {
+    expect<ValidDeclaration<string, TestDeclarations>>().type.toRaiseError();
+  });
 });
 
 describe('Custom extras', () => {
