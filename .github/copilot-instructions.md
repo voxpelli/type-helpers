@@ -40,7 +40,7 @@ This is a **type-only TypeScript library** - containing only `.d.ts` files with 
 **Type Testing with tstyche:**
 - Type-level tests in `typetests/*.test.ts` using [tstyche](https://tstyche.org/)
 - Run: `npm run check:type-test` (runs on current TypeScript version) or `npm run test:tstyche` (runs on all supported TypeScript version)
-- Tests validate type behavior (e.g., `.toBe()`, `.toBeAssignableTo()`, `.toRaiseError()` – use DeepWiki `ask_question` / `read_wiki_contents` / `read_wiki_structure` tools to get current documentation `for tstyche/tstyche`)
+- Tests validate type behavior (e.g., `.toBe()`, `.toBeAssignableTo()`, `.toRaiseError()` – use eg. DeepWiki `ask_question` / `read_wiki_contents` / `read_wiki_structure` tools to get current documentation `for tstyche/tstyche`)
 - **Note:** VSCode/editors may show errors on `.toRaiseError()` calls - this is expected and okay! These are intentional type errors being tested.
 
 **Other Checks:**
