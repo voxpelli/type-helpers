@@ -48,7 +48,7 @@ describe('PartialKeys', () => {
 });
 
 describe('UnknownObjectEntry', () => {
-  it('should accept string-keyed entries', () => {
+  it('should accept entries keyed by string, number, or symbol', () => {
     expect<['key', 'value']>().type.toBeAssignableTo<UnknownObjectEntry>();
     expect<['key', 123]>().type.toBeAssignableTo<UnknownObjectEntry>();
     expect<[42, 'value']>().type.toBeAssignableTo<UnknownObjectEntry>();

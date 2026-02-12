@@ -3,7 +3,7 @@ import { describe, it, expect } from 'tstyche';
 import type { Equal, MaybePromised, Simplify } from '../index.js';
 
 describe('Equal', () => {
-  it('should return type when both sides are equal, or never when not equal', () => {
+  it('should return A when A is assignable to B, or never otherwise', () => {
     expect<Equal<string, string>>().type.toBe<string>();
     expect<Equal<string, number>>().type.toBe<never>();
   });
