@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/voxpelli/type-helpers/compare/v4.0.0...v4.0.1) (2026-02-12)
+
+
+### 🧹 Chores
+
+* **deps:** update dependency typescript to ~5.9.3 ([#12](https://github.com/voxpelli/type-helpers/issues/12)) ([e06d504](https://github.com/voxpelli/type-helpers/commit/e06d5043490a239817ab2f854f33d4325bb6047f))
+
 ## [4.0.0](https://github.com/voxpelli/type-helpers/compare/v3.5.0...v4.0.0) (2026-02-12)
 
 
