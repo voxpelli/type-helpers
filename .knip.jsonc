@@ -1,4 +1,5 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
-  "entry": ["index.d.ts"]
+  "entry": ["index.d.ts"],
+  "ignore": ["**/typetests/**/*.test.ts"]
 }
