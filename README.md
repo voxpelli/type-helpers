@@ -20,6 +20,13 @@ My personal type helpers
 import type { PartialKeys } from '@voxpelli/type-helpers';
 ```
 
+## Type verification
+
+Type helpers for compile-time validation of type relationships and constraints.
+
+* `VerifySuperset<Base, Superset>` – validates that `Superset` is assignable to `Base` at compile-time
+* `VerifyObjectHasTypeProperty<Superset, [RequireLiteralStrings=false]>` – validates that a type has a `type: string` property, optionally rejecting generic `string` in favor of string literals (useful for discriminated unions)
+
 ## Declaration types
 
 A mechanism for third-party extendible [discriminated unions](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#discriminated-unions).
@@ -109,11 +116,12 @@ function timeToFoo (foo) {
 
 ## Object types
 
-* `ObjectEntry<T>` – a typed equivalent to all invidiual items `Object.entries()` returns
-* `ObjectEntries<T>` – an array of `ObjectEntry<T>`, mmore similar to what `Object.entries()` returns
+* `ObjectEntry<T>` – a typed equivalent to all individual items `Object.entries()` returns
+* `ObjectEntries<T>` – an array of `ObjectEntry<T>`, more similar to what `Object.entries()` returns
 * `ObjectFromEntries<T>` – a typed equivalent of what `Object.fromEntries()` returns
 * `PartialKeys<Foo, 'abc'>` – makes the key `abc` of `Foo` optional
 * `UnknownObjectEntry` – the least specific entry for `ObjectFromEntries<T>` and what `T` needs to be a subset of there
+* `IsEmptyObject<T>` – checks if a type is an empty object (originally from [`type-fest`](https://github.com/sindresorhus/type-fest))
 
 ## String types
 
@@ -123,8 +131,8 @@ function timeToFoo (foo) {
 ## Util types
 
 * `Equal<A, B>` – if `A extends B`, then resolves to `A`, else resolved to `never`
-* `LiteralTypeOf<T>` – resolves to a string literal that matches the [`typeof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator
 * `MaybePromised<T>` – resolves to `T | Promise<T>`
+* `Simplify<T>` – flattens intersection types for cleaner display (originally from [`type-fest`](https://github.com/sindresorhus/type-fest))
 
 ## Used by
 
@@ -133,4 +141,5 @@ function timeToFoo (foo) {
 
 ## Similar modules
 
-* [`type-fest`](https://github.com/sindresorhus/type-fest) – a large colelction of type helpers
+* [`@voxpelli/typed-utils`](https://github.com/voxpelli/typed-utils) – contains some useful types like `LiteralTypeOf<T>` and `LiteralTypes` (that used to belong to this module)
+* [`type-fest`](https://github.com/sindresorhus/type-fest) – a large collection of type helpers
