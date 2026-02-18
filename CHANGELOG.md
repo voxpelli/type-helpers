@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.1.0](https://github.com/voxpelli/type-helpers/compare/v4.0.1...v4.1.0) (2026-02-18)
+
+
+### 🌟 Features
+
+* add `FunctionWithoutFirstParameter` and `ParametersWithoutTheFirst` ([#26](https://github.com/voxpelli/type-helpers/issues/26)) ([415e339](https://github.com/voxpelli/type-helpers/commit/415e339b91e0e148dc77f74e295cc0a477b69f81))
+
+
+### 📚 Documentation
+
+* improve readme ([a71dfcd](https://github.com/voxpelli/type-helpers/commit/a71dfcd395426fe2fb36adfeeb89484f8f1e7ef0))
+* spell out "Utility" in full ([bbc7434](https://github.com/voxpelli/type-helpers/commit/bbc74348472540513ed0dedddc723f82049dba9e))
+
 ## [4.0.1](https://github.com/voxpelli/type-helpers/compare/v4.0.0...v4.0.1) (2026-02-12)
 
 
