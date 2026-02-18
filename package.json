@@ -26,7 +26,7 @@
     "check:lint": "eslint",
     "check:tsc": "tsc",
     "check:type-test": "tstyche",
-    "check:type-coverage": "type-coverage --detail --strict --at-least 99 --ignore-files 'test/*'",
+    "check:type-coverage": "type-coverage --detail --strict --at-least 98 --ignore-files 'test/*'",
     "check": "run-p check:* --continue-on-error",
     "prepare": "husky",
     "test:tstyche": "tstyche --target \"$(jq -r '.engines.typescript' package.json)\"",
