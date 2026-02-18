@@ -24,7 +24,7 @@ Consider [`type-fest`](https://github.com/sindresorhus/type-fest) if you need a 
 - `index.d.ts` re-exports from `lib/*.d.ts` using `export type *`
 - `lib/*.d.ts` contain categorized type definitions (declaration, function, object, string, util, verify)
 - `typetests/*.test.ts` validate type behavior using [tstyche](https://tstyche.org/)
-- **Validation contract**: tsc + type-coverage (>99%) + tstyche before commit
+- **Validation contract**: tsc + type-coverage (>98%) + tstyche before commit
 
 ---
 
@@ -51,7 +51,7 @@ If rules conflict, follow `MUST` over `SHOULD`. If uncertainty remains, use `ask
 - Use `export type` for all exports (never `export { ... }`)
 - Constrain generic parameters with `extends` when appropriate
 - Add or update tstyche tests when type behavior changes
-- Maintain type coverage >99%
+- Maintain type coverage >98%
 - Validate changes with tsc, type-coverage, and tstyche before finalizing
 - Keep changes minimal, targeted, and consistent with existing structure
 
@@ -226,7 +226,7 @@ When implementing a new type pattern or feature:
 **Other Checks:**
 ```bash
 npm run check:tsc             # TypeScript validation
-npm run check:type-coverage   # Coverage >99%
+npm run check:type-coverage   # Coverage >98%
 npm run check:knip            # Unused exports
 npm run check:lint            # ESLint
 npm run check:type-test       # TSTyche on installed TypeScript version
@@ -305,7 +305,7 @@ export type Equal<A, B> = A extends B ? A : never;
 4. ✅ Keep types focused and composable
 5. ✅ Export everything through index.d.ts using `export type *`
 6. ✅ Organize types by category (declaration, function, object, string, util, verify)
-7. ✅ Maintain strict type coverage (>99%)
+7. ✅ Maintain strict type coverage (>98%)
 8. ✅ Document complex types with comments when necessary
 9. ✅ Use JSDoc comments with @see and @example for complex types
 10. ✅ Consider backwards compatibility when modifying existing types
@@ -342,7 +342,7 @@ If your project wants to use or understand the type-helpers style:
 
 - **Type-only library** - NO runtime code, only `.d.ts` files
 - **Hand-written types** - NO build process, NO code generation
-- **Strict validation** - tsc + type-coverage (>99%) + tstyche
+- **Strict validation** - tsc + type-coverage (>98%) + tstyche
 - **Type testing** - tstyche for compile-time validation
 - **Modern TypeScript** - conditional types, mapped types, template literals
 

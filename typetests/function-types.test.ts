@@ -20,6 +20,11 @@ describe('ParametersWithoutTheFirst', () => {
     type TestFunc = () => void;
     expect<ParametersWithoutTheFirst<TestFunc>>().type.toBe<never>();
   });
+
+  it('should raise error for non-function types', () => {
+    expect<ParametersWithoutTheFirst<string>>().type.toRaiseError();
+    expect<ParametersWithoutTheFirst<number>>().type.toRaiseError();
+  });
 });
 
 describe('FunctionWithoutFirstParameter', () => {
@@ -45,5 +50,10 @@ describe('FunctionWithoutFirstParameter', () => {
     type TestFunc = (a: string, b: number) => string;
     type Result = FunctionWithoutFirstParameter<TestFunc>;
     expect<Result>().type.toBeAssignableTo<(b: number) => string>();
+  });
+
+  it('should raise error for non-function types', () => {
+    expect<FunctionWithoutFirstParameter<string>>().type.toRaiseError();
+    expect<FunctionWithoutFirstParameter<number>>().type.toRaiseError();
   });
 });
