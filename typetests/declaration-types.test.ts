@@ -33,7 +33,7 @@ describe('AnyDeclaration', () => {
 
   // Somewhat redundant: This is testing individual assignability which is implied by the union test above
   it('should allow button declaration to be assignable to AnyDeclaration', () => {
-    expect<{ type: 'Button'; label: string }>().type.toBeAssignableTo<AnyDeclaration<TestDeclarations>>();
+    expect<AnyDeclaration<TestDeclarations>>().type.toBeAssignableFrom<{ type: 'Button'; label: string }>();
   });
 });
 
