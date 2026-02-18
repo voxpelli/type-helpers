@@ -4,6 +4,7 @@ My personal type helpers
 
 [![npm version](https://img.shields.io/npm/v/@voxpelli/type-helpers.svg?style=flat)](https://www.npmjs.com/package/@voxpelli/type-helpers)
 [![npm downloads](https://img.shields.io/npm/dm/@voxpelli/type-helpers.svg?style=flat)](https://www.npmjs.com/package/@voxpelli/type-helpers)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/voxpelli/type-helpers)
 [![Follow @voxpelli@mastodon.social](https://img.shields.io/mastodon/follow/109247025527949675?domain=https%3A%2F%2Fmastodon.social&style=social)](https://mastodon.social/@voxpelli)
 
 ## Usage
@@ -25,13 +26,6 @@ Or, in modern TypeScript versions:
 ```typescript
 import type { PartialKeys } from '@voxpelli/type-helpers';
 ```
-
-## Type verification
-
-Type helpers for compile-time validation of type relationships and constraints.
-
-* `VerifySuperset<Base, Superset>` – validates that `Superset` is assignable to `Base` at compile-time
-* `VerifyObjectHasTypeProperty<Superset, [RequireLiteralStrings=false]>` – validates that a type has a `type: string` property, optionally rejecting generic `string` in favor of string literals (useful for discriminated unions)
 
 ## Declaration types
 
@@ -120,14 +114,19 @@ function timeToFoo (foo) {
 
 </details>
 
+## Function types
+
+* `FunctionWithoutFirstParameter<T>` – creates a new function type without the first parameter while preserving the return type
+* `ParametersWithoutTheFirst<T>` – extracts the parameter tuple of a function type without the first parameter
+
 ## Object types
 
-* `ObjectEntry<T>` – a typed equivalent to all individual items `Object.entries()` returns
+* `IsEmptyObject<T>` – checks if a type is an empty object (originally from [`type-fest`](https://github.com/sindresorhus/type-fest))
 * `ObjectEntries<T>` – an array of `ObjectEntry<T>`, more similar to what `Object.entries()` returns
+* `ObjectEntry<T>` – a typed equivalent to all individual items `Object.entries()` returns
 * `ObjectFromEntries<T>` – a typed equivalent of what `Object.fromEntries()` returns
 * `PartialKeys<Foo, 'abc'>` – makes the key `abc` of `Foo` optional
 * `UnknownObjectEntry` – the least specific entry for `ObjectFromEntries<T>` and what `T` needs to be a subset of there
-* `IsEmptyObject<T>` – checks if a type is an empty object (originally from [`type-fest`](https://github.com/sindresorhus/type-fest))
 
 ## String types
 
@@ -139,6 +138,13 @@ function timeToFoo (foo) {
 * `Equal<A, B>` – if `A extends B`, then resolves to `A`, else resolved to `never`
 * `MaybePromised<T>` – resolves to `T | Promise<T>`
 * `Simplify<T>` – flattens intersection types for cleaner display (originally from [`type-fest`](https://github.com/sindresorhus/type-fest))
+
+## Verification types
+
+Type helpers for compile-time validation of type relationships and constraints.
+
+* `VerifyObjectHasTypeProperty<Superset, [RequireLiteralStrings=false]>` – validates that a type has a `type: string` property, optionally rejecting generic `string` in favor of string literals (useful for discriminated unions)
+* `VerifySuperset<Base, Superset>` – validates that `Superset` is assignable to `Base` at compile-time
 
 ## Used by
 
