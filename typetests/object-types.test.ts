@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'tstyche';
+import { describe, it, expect, type _ } from 'tstyche';
 
 import type {
   ObjectEntries,
@@ -14,9 +14,9 @@ describe('ObjectEntry', () => {
     expect<ObjectEntry<{ a: string; b: number }>>().type.toBe<['a', string] | ['b', number]>();
   });
 
-  it('should raise error for non-object types', () => {
-    expect<ObjectEntry<string>>().type.toRaiseError();
-    expect<ObjectEntry<number>>().type.toRaiseError();
+  it('should not be instantiable with non-object types', () => {
+    expect<ObjectEntry<_>>().type.not.toBeInstantiableWith<[string]>();
+    expect<ObjectEntry<_>>().type.not.toBeInstantiableWith<[number]>();
   });
 });
 
@@ -51,9 +51,9 @@ describe('PartialKeys', () => {
     expect<Result>().type.toBeAssignableTo<{ a?: string; b?: number; c: boolean }>();
   });
 
-  it('should raise error when key does not exist in object', () => {
+  it('should not be instantiable with key that does not exist in object', () => {
     type TestObject = { a: string; b: number };
-    expect<PartialKeys<TestObject, 'nonexistent'>>().type.toRaiseError();
+    expect<PartialKeys<_, _>>().type.not.toBeInstantiableWith<[TestObject, 'nonexistent']>();
   });
 });
 
