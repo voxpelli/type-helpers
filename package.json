@@ -33,9 +33,9 @@
     "test": "run-s check test:*"
   },
   "devDependencies": {
-    "@types/node": "^20.19.33",
+    "@types/node": "^20.19.41",
     "@voxpelli/eslint-config": "^23.0.0",
-    "@voxpelli/tsconfig": "^16.1.0",
+    "@voxpelli/tsconfig": "^16.2.1",
     "eslint": "^9.39.2",
     "husky": "^9.1.7",
     "installed-check": "^10.0.0",
