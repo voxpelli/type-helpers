@@ -1,6 +1,6 @@
-import { describe, it, expect } from 'tstyche';
+import { describe, expect, it } from 'tstyche';
 
-import type { VerifySuperset, VerifyObjectHasTypeProperty } from '../index.js';
+import type { VerifyObjectHasTypeProperty, VerifySuperset } from '../index.js';
 
 describe('VerifySuperset', () => {
   it('should accept superset that extends base type', () => {
