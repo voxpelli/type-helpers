@@ -130,6 +130,7 @@ function timeToFoo (foo) {
 
 ## String types
 
+* `LiteralStringUnion<Literals>` – a union of the known string literals in `Literals` that still accepts any `string`, keeping the literals as editor suggestions (the string-pinned form of [`type-fest`](https://github.com/sindresorhus/type-fest)'s `LiteralStringUnion` / `LiteralUnion`)
 * `NonGenericString<T, [ErrorMessage]>` – ensures that `T` is not a generic `string` (and as such likely a string literal)
 * `NonGenericStringArray<T, [ErrorMessage]>` – similar to `NonGenericString` but with `T` being an `Array` / `ReadonlyArray`
 
