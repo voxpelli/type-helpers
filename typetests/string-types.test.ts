@@ -1,9 +1,9 @@
-import { describe, it, expect } from 'tstyche';
+import { describe, expect, it } from 'tstyche';
 
 import type {
+  LiteralStringUnion,
   NonGenericString,
   NonGenericStringArray,
-  LiteralStringUnion,
 } from '../index.js';
 
 describe('NonGenericString', () => {

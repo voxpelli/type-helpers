@@ -1,8 +1,8 @@
-import { describe, it, expect } from 'tstyche';
+import { describe, expect, it } from 'tstyche';
 
 import type {
-  ParametersWithoutTheFirst,
   FunctionWithoutFirstParameter,
+  ParametersWithoutTheFirst,
 } from '../index.js';
 
 describe('ParametersWithoutTheFirst', () => {
