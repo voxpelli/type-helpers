@@ -3,6 +3,7 @@ import { describe, it, expect } from 'tstyche';
 import type {
   NonGenericString,
   NonGenericStringArray,
+  LiteralStringUnion,
 } from '../index.js';
 
 describe('NonGenericString', () => {
@@ -44,5 +45,52 @@ describe('NonGenericStringArray', () => {
   it('should allow non-string array types to pass through unchanged', () => {
     expect<NonGenericStringArray<number[]>>().type.toBe<number[]>();
     expect<NonGenericStringArray<boolean[]>>().type.toBe<boolean[]>();
+  });
+});
+
+describe('LiteralStringUnion', () => {
+  type Status = LiteralStringUnion<'SUCCESS' | 'PENDING' | 'FAILED'>;
+
+  it('should keep the known literals as distinct, non-collapsed members', () => {
+    // The literals survive alongside the open `string & {}` member rather than
+    // being eagerly collapsed into plain `string` – this is what preserves the
+    // editor suggestions. (tstyche has no completions matcher, so we pin the
+    // structural shape that makes the suggestions possible, not the suggestions.)
+    // Load-bearing assertion: it fails if the union ever collapses to plain `string`.
+    expect<Status>().type.toBe<'SUCCESS' | 'PENDING' | 'FAILED' | (string & Record<never, never>)>();
+  });
+
+  it('should accept the known string literals', () => {
+    expect<'SUCCESS'>().type.toBeAssignableTo<Status>();
+    expect<'PENDING'>().type.toBeAssignableTo<Status>();
+  });
+
+  it('should stay open to any string', () => {
+    expect<'anything else'>().type.toBeAssignableTo<Status>();
+    expect<string>().type.toBeAssignableTo<Status>();
+    // ...and is itself just a string (offers no safety beyond `string`)
+    expect<Status>().type.toBeAssignableTo<string>();
+  });
+
+  it('should raise an error for non-string type arguments', () => {
+    expect<LiteralStringUnion<number>>().type.toRaiseError();
+    expect<LiteralStringUnion<boolean>>().type.toRaiseError();
+  });
+
+  // Edge case
+  it('should reduce to the open string member when given never', () => {
+    expect<LiteralStringUnion<never>>().type.toBe<string & Record<never, never>>();
+  });
+
+  // Edge case
+  it('should degenerate to (be mutually assignable with) plain string when given a generic string', () => {
+    expect<LiteralStringUnion<string>>().type.toBeAssignableTo<string>();
+    expect<string>().type.toBeAssignableTo<LiteralStringUnion<string>>();
+  });
+
+  // Edge case
+  it('should degenerate the same way when the literal set already contains a bare string', () => {
+    expect<LiteralStringUnion<'a' | string>>().type.toBeAssignableTo<string>();
+    expect<string>().type.toBeAssignableTo<LiteralStringUnion<'a' | string>>();
   });
 });
