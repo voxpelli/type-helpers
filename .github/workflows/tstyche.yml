@@ -1,4 +1,4 @@
-name: Type Checks, Internal Types
+name: Type Tests, tstyche
 
 on:
   push:
