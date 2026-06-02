@@ -40,7 +40,7 @@
     "husky": "^9.1.7",
     "installed-check": "^10.0.0",
     "knip": "^6.15.0",
-    "npm-run-all2": "^8.0.4",
+    "npm-run-all2": "^9.0.1",
     "tstyche": "^7.0.0",
     "type-coverage": "^2.29.7",
     "typescript": "~6.0.3",
