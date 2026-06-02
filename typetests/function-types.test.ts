@@ -1,4 +1,6 @@
-import { describe, expect, it } from 'tstyche';
+import {
+  type _, describe, expect, it,
+} from 'tstyche';
 
 import type {
   FunctionWithoutFirstParameter,
@@ -21,9 +23,9 @@ describe('ParametersWithoutTheFirst', () => {
     expect<ParametersWithoutTheFirst<TestFunc>>().type.toBe<never>();
   });
 
-  it('should raise error for non-function types', () => {
-    expect<ParametersWithoutTheFirst<string>>().type.toRaiseError();
-    expect<ParametersWithoutTheFirst<number>>().type.toRaiseError();
+  it('should not be instantiable with non-function types', () => {
+    expect<ParametersWithoutTheFirst<_>>().type.not.toBeInstantiableWith<[string]>();
+    expect<ParametersWithoutTheFirst<_>>().type.not.toBeInstantiableWith<[number]>();
   });
 });
 
@@ -53,7 +55,7 @@ describe('FunctionWithoutFirstParameter', () => {
   });
 
   it('should raise error for non-function types', () => {
-    expect<FunctionWithoutFirstParameter<string>>().type.toRaiseError();
-    expect<FunctionWithoutFirstParameter<number>>().type.toRaiseError();
+    expect<FunctionWithoutFirstParameter<_>>().type.not.toBeInstantiableWith<[string]>();
+    expect<FunctionWithoutFirstParameter<_>>().type.not.toBeInstantiableWith<[number]>();
   });
 });

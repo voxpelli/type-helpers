@@ -1,4 +1,6 @@
-import { describe, expect, it } from 'tstyche';
+import {
+  type _, describe, expect, it,
+} from 'tstyche';
 
 import type { VerifyObjectHasTypeProperty, VerifySuperset } from '../index.js';
 
@@ -9,8 +11,8 @@ describe('VerifySuperset', () => {
     expect<VerifySuperset<Base, Derived>>().type.toBe<Derived>();
   });
 
-  it('should raise error when type does not extend base', () => {
-    expect<VerifySuperset<{ type: string }, { abc: 123 }>>().type.toRaiseError();
+  it('should not be instantiable with type that does not extend base', () => {
+    expect<VerifySuperset<_, _>>().type.not.toBeInstantiableWith<[{ type: string }, { abc: 123 }]>();
   });
 
   // Edge case
@@ -31,8 +33,8 @@ describe('VerifyObjectHasTypeProperty', () => {
       expect<VerifyObjectHasTypeProperty<{ type: string }>>().type.toBe<{ type: string }>();
     });
 
-    it('should raise error when property is missing', () => {
-      expect<VerifyObjectHasTypeProperty<{ abc: 123 }>>().type.toRaiseError();
+    it('should not be instantiable with property that is missing', () => {
+      expect<VerifyObjectHasTypeProperty<_>>().type.not.toBeInstantiableWith<[{ abc: 123 }]>();
     });
 
     // Edge case
@@ -47,12 +49,12 @@ describe('VerifyObjectHasTypeProperty', () => {
       expect<VerifyObjectHasTypeProperty<{ type: 'foo' }, true>>().type.toBe<{ type: 'foo' }>();
     });
 
-    it('should raise error when type is generic string', () => {
-      expect<VerifyObjectHasTypeProperty<{ type: string }, true>>().type.toRaiseError();
+    it('should not be instantiable with type that is generic string', () => {
+      expect<VerifyObjectHasTypeProperty<_>>().type.not.toBeInstantiableWith<[{ type: string }, true]>();
     });
 
-    it('should raise error when property is missing', () => {
-      expect<VerifyObjectHasTypeProperty<{ abc: 123 }, true>>().type.toRaiseError();
+    it('should not be instantiable with property that is missing', () => {
+      expect<VerifyObjectHasTypeProperty<_>>().type.not.toBeInstantiableWith<[{ abc: 123 }, true]>();
     });
 
     // Edge case

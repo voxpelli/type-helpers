@@ -1,4 +1,6 @@
-import { describe, expect, it } from 'tstyche';
+import {
+  type _, describe, expect, it,
+} from 'tstyche';
 
 import type {
   AnyDeclaration,
@@ -52,12 +54,12 @@ describe('ValidDeclaration', () => {
     expect<ValidDeclaration<'Input', TestDeclarations>['type']>().type.toBe<'Input'>();
   });
 
-  it('should raise error when type name does not exist in declarations', () => {
-    expect<ValidDeclaration<'NonExistent', TestDeclarations>>().type.toRaiseError();
+  it('should not be instantiable with type name that does not exist in declarations', () => {
+    expect<ValidDeclaration<_, _>>().type.not.toBeInstantiableWith<['NonExistent', TestDeclarations]>();
   });
 
-  it('should raise error when using generic string instead of literal', () => {
-    expect<ValidDeclaration<string, TestDeclarations>>().type.toRaiseError();
+  it('should not be instantiable with generic string instead of literal', () => {
+    expect<ValidDeclaration<_, _>>().type.not.toBeInstantiableWith<[string, TestDeclarations]>();
   });
 });
 

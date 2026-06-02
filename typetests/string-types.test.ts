@@ -1,4 +1,6 @@
-import { describe, expect, it } from 'tstyche';
+import {
+  type _, describe, expect, it,
+} from 'tstyche';
 
 import type {
   LiteralStringUnion,
@@ -72,9 +74,9 @@ describe('LiteralStringUnion', () => {
     expect<Status>().type.toBeAssignableTo<string>();
   });
 
-  it('should raise an error for non-string type arguments', () => {
-    expect<LiteralStringUnion<number>>().type.toRaiseError();
-    expect<LiteralStringUnion<boolean>>().type.toRaiseError();
+  it('should not be instantiable with non-string type arguments', () => {
+    expect<LiteralStringUnion<_>>().type.not.toBeInstantiableWith<[number]>();
+    expect<LiteralStringUnion<_>>().type.not.toBeInstantiableWith<[boolean]>();
   });
 
   // Edge case
