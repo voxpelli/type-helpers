@@ -1,12 +1,12 @@
-import { describe, it, expect, type _ } from 'tstyche';
+import { describe, expect, it, type _ } from 'tstyche';
 
 import type {
+  IsEmptyObject,
   ObjectEntries,
   ObjectEntry,
   ObjectFromEntries,
   PartialKeys,
   UnknownObjectEntry,
-  IsEmptyObject,
 } from '../index.js';
 
 describe('ObjectEntry', () => {

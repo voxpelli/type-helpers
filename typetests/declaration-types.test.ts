@@ -1,4 +1,4 @@
-import { describe, it, expect, type _ } from 'tstyche';
+import { describe, expect, it, type _ } from 'tstyche';
 
 import type {
   AnyDeclaration,

@@ -21,29 +21,29 @@
     "lib/*.d.ts"
   ],
   "scripts": {
+    "check": "run-p check:* --continue-on-error",
     "check:installed-check": "installed-check -i tstyche",
     "check:knip": "knip",
     "check:lint": "eslint",
     "check:tsc": "tsc",
-    "check:type-test": "tstyche",
     "check:type-coverage": "type-coverage --detail --strict --at-least 98 --ignore-files 'test/*'",
-    "check": "run-p check:* --continue-on-error",
+    "check:type-test": "tstyche",
     "prepare": "husky",
-    "test:tstyche": "tstyche --target \"$(jq -r '.engines.typescript' package.json)\"",
-    "test": "run-s check test:*"
+    "test": "run-s check test:*",
+    "test:tstyche": "tstyche --target \"$(jq -r '.engines.typescript' package.json)\""
   },
   "devDependencies": {
-    "@types/node": "^20.19.33",
-    "@voxpelli/eslint-config": "^23.0.0",
-    "@voxpelli/tsconfig": "^16.1.0",
-    "eslint": "^9.39.2",
+    "@types/node": "^20.19.41",
+    "@voxpelli/eslint-config": "^25.1.0",
+    "@voxpelli/tsconfig": "^16.2.1",
+    "eslint": "^9.39.4",
     "husky": "^9.1.7",
     "installed-check": "^10.0.0",
-    "knip": "^5.83.1",
+    "knip": "^6.15.0",
     "npm-run-all2": "^8.0.4",
     "tstyche": "^7.0.0",
     "type-coverage": "^2.29.7",
-    "typescript": "~5.9.3",
+    "typescript": "~6.0.3",
     "validate-conventional-commit": "^1.0.4"
   }
 }
