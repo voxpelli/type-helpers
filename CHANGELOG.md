@@ -1,5 +1,20 @@
 # Changelog
 
+## [4.2.0](https://github.com/voxpelli/type-helpers/compare/v4.1.0...v4.2.0) (2026-06-03)
+
+
+### 🌟 Features
+
+* add `LiteralStringUnion` ([#34](https://github.com/voxpelli/type-helpers/issues/34)) ([3b8708d](https://github.com/voxpelli/type-helpers/commit/3b8708d6e28a4f6af4d0f14521692453be74e37c))
+
+
+### 🧹 Chores
+
+* **deps:** bundle dependency updates ([#36](https://github.com/voxpelli/type-helpers/issues/36)) ([c15ab28](https://github.com/voxpelli/type-helpers/commit/c15ab28b4d49391c1a272e8d4df6fa1fd074c396))
+* **deps:** update dependency tstyche to ^7.2.1 ([#31](https://github.com/voxpelli/type-helpers/issues/31)) ([aa784f7](https://github.com/voxpelli/type-helpers/commit/aa784f7616f9b28996e234a171a042a4f09db7dc))
+* **deps:** update linting dependencies to ^10.0.1 ([#28](https://github.com/voxpelli/type-helpers/issues/28)) ([f887d9d](https://github.com/voxpelli/type-helpers/commit/f887d9df50ce34cd941271f607b504612dab1ad0))
+* update tstyche to v7.0.0 ([#27](https://github.com/voxpelli/type-helpers/issues/27)) ([6f8588c](https://github.com/voxpelli/type-helpers/commit/6f8588c5d9e2734e3a284669736416f7b98b59f3))
+
 ## [4.1.0](https://github.com/voxpelli/type-helpers/compare/v4.0.1...v4.1.0) (2026-02-18)
 
 
