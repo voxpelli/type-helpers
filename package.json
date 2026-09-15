@@ -43,7 +43,7 @@
     "npm-run-all2": "^8.0.4",
     "tstyche": "^7.2.1",
     "type-coverage": "^2.29.7",
-    "typescript": "~6.0.3",
+    "typescript": "~7.0.2",
     "validate-conventional-commit": "^1.0.4"
   }
 }
